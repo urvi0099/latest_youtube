@@ -1,0 +1,44 @@
+.card {
+  border: none;
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background: rgb(255, 255, 255) ; */
+  box-shadow: 5px 10px 10px 5px rgb(3, 3, 3);
+}
+
+.card h1,
+h4 {
+  color: rgb(2, 2, 2);
+}
+
+label {
+  color: rgb(2, 2, 2);
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
+
+.form-control {
+  box-shadow: none;
+  border-color: black;
+}
+
+input#name.form-control.ng-touched.ng-dirty.ng-valid {
+  background-color: none !important;
+}
+
+/* .bg{
+    background-image : url(../../assets/img/bg1.jpg);
+  ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: linen;
+    height: 100%
+  }
+     */

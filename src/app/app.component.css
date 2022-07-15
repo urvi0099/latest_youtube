@@ -1,0 +1,24 @@
+.app_page {
+  display: flex;
+  /* position: absolute; */
+  width: 100%;
+  height: calc(100%-70px);
+}
+
+.app-side-nav-open {
+  width: 60px;
+}
+.app-side-nav-hide {
+  width: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 15px;
+  /* position: fixed; */
+  background-color: white;
+  z-index: 100;
+}

@@ -1,0 +1,32 @@
+/* #form1{
+    margin-left:100%;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* ****header**** */
+.icon {
+  color: grey;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 15px;
+  position: static;
+  background-color: white;
+  z-index: 100;
+}
+.header i {
+  padding: 0px 7px;
+  cursor: pointer;
+}

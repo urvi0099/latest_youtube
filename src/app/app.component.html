@@ -1,0 +1,13 @@
+<div class="header">
+  <app-header-left (sidenavtoggled)="sidenavstatus = $event"></app-header-left>
+  <app-search-bar></app-search-bar>
+  <app-header-right></app-header-right>
+</div>
+
+<div class="app_page">
+  <app-sidebar
+    [sidenavstatus]="sidenavstatus"
+    [ngClass]="{ 'app-side-nav-open': sidenavstatus }"
+  ></app-sidebar>
+  <router-outlet></router-outlet>
+</div>

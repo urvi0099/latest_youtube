@@ -1,0 +1,39 @@
+i {
+  padding: 0px 7px;
+  cursor: pointer;
+  margin-block: auto;
+}
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: end;
+}
+.header_icons {
+  display: flex;
+  margin-right: 10px;
+}
+.dropdown-menu {
+  padding: 0px;
+  background-color: darkgray;
+  cursor: pointer;
+  width: 25px;
+}
+.dropdown-item {
+  margin-right: 15px;
+  padding-right: 0px;
+}
+.text {
+  position: relative;
+  bottom: 5px;
+}
+.profile {
+  cursor: pointer;
+}

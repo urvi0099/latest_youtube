@@ -1,0 +1,28 @@
+<input
+  field="text"
+  id="search"
+  placeholder="search here...."
+  [(ngModel)]="filterTerm"
+/>
+
+<div class="videos-container">
+  <div class="video" *ngFor="let video of videos | filter: filterTerm">
+    <div class="videos">
+      <div class="video_thumbnail" routerLink="/video/{{ video.id }}">
+        <video controls>
+          <source src="{{ video.thumbnail }}" type="video/mp4" />
+        </video>
+      </div>
+      <div class="video_details">
+        <div class="author">
+          <img src="{{ video.img }}" />
+        </div>
+        <div class="title">
+          <h6>{{ video.title }}</h6>
+          <a href="">{{ video.subtitle }}</a>
+          <span>{{ video.timestamp }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

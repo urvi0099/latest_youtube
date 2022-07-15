@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+/* ******mainbody****** */
+/* .main{
+    height: calc(100vh - 70px); 
+     display: flex; 
+    overflow: hidden; 
+   
+  }  */
+
+/* ******   sidebar   ****** */
+.container {
+  height: 100%;
+  width: 230px;
+  background-color: white;
+  overflow-y: scroll;
+  flex: 0.2;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  transition: width 250ms ease-in;
+}
+/* .nav-list-open {
+  width: 50px;
+} */
+/* .app-side-nav-open{
+  width: 230px;
+  } */
+
+.categories {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  padding: 12px 25px;
+  /* height: 50px; */
+  width: 230px;
+}
+
+.category span {
+  margin-left: 0px;
+  width: 100px;
+  align-items: center;
+  text-align: justify;
+}
+.category i {
+  margin-left: 0px;
+  margin-right: 15px;
+  /* width: 25px; */
+  height: 25px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.category:hover {
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+hr {
+  height: 1px;
+  background-color: black;
+  border: none;
+}

@@ -1,0 +1,74 @@
+<div class="bg"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Login</h1>
+          <h5>Please enter your Email and Password!!</h5>
+        </div>
+
+        <form [formGroup]="loginform" (ngSubmit)="loginuser()">
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              formControlName="email"
+              id="email"
+              aria-describedby="emailHelp"
+            />
+
+            <div
+              *ngIf="email.invalid && (email.dirty || email.touched)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="email.hasError('required')">Email is required.</div>
+              <div *ngIf="email.errors?.['email']">
+                Email must be a valid email address
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              id="password"
+            />
+
+            <div
+              *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="password.errors?.['required']">
+                Password must be match..
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary mb-2"
+            [disabled]="loginform.invalid"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-secondary"
+            routerLink="/home"
+            style="margin-left: 10px; margin-bottom: 5px"
+          >
+            Close
+          </button>
+        </form>
+        <a style="color: rgb(2, 2, 2); margin-top: 10px" routerLink="/signup"
+          >Don't have an account?SignUp here!!</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="col-sm-8">
+    <div class="video_thumbnail">
+      <video controls>
+        <source src="{{ video.thumbnail }}" type="video/mp4" />
+      </video>
+    </div>
+    <div class="video_details">
+      <div class="title">
+        <h5>{{ video.title }}</h5>
+      </div>
+      <div class="subtitle">
+        <span>{{ video.timestamp }}</span>
+
+        <div
+          class="dropdown mr-5"
+          dropdown
+          dropdownToggle
+          (click)="(false)"
+          *ngIf="!userExist"
+        >
+          <div class="liked">
+            <i class="{{ video.like_icon }}">{{ video.liked_icon_name }}</i
+            >&nbsp;&nbsp;
+            {{ video.like }}
+          </div>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-left">
+            <p class="">Like this video?</p>
+            <p class="">Sign in to make your opinion count.</p>
+            <div class="dropdown-divider"></div>
+            <a class="" routerLink="/signup"> SIGN IN</a>
+          </div>
+        </div>
+        <div class="liked" *ngIf="userExist">
+          <i class="{{ video.like_icon }}">{{ video.liked_icon_name }}</i
+          >&nbsp;&nbsp;
+          {{ video.like }}
+        </div>
+
+        <div
+          class="dropdown mr-5"
+          dropdown
+          dropdownToggle
+          (click)="(false)"
+          *ngIf="!userExist"
+        >
+          <div class="dislike">
+            <i class="{{ video.dislike_icon }}"
+              >{{ video.disliked_icon_name }} </i
+            >&nbsp;&nbsp;{{ video.dislike }}
+          </div>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-left">
+            <p class="">Don't like this video?</p>
+            <p class="">Sign in to make your opinion count.</p>
+            <div class="dropdown-divider"></div>
+            <a class="" routerLink="/signup"> SIGN IN</a>
+          </div>
+        </div>
+
+        <div class="dislike" *ngIf="userExist" (click)="disLike()">
+          <i class="{{ video.dislike_icon }}">{{ video.disliked_icon_name }} </i
+          >&nbsp;&nbsp;{{ video.dislike }}
+        </div>
+
+        <div class="share_icon" (click)="copyUrl()">
+          <i class="{{ video.share_icon }}">{{ video.share_icon_name }} </i
+          >{{ video.share_name }}
+        </div>
+        <div class="clipboard" *ngIf="urlcopied">
+          <span id="custom-tooltip" class="url">Url copied!!</span>
+        </div>
+
+        <div class="more_icon">
+          <i class="{{ video.more_icon }}">{{ video.more_icon_name }} </i>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="author">
+      <img src="{{ video.img }}" />
+      <a routerLink="/home">{{ video.subtitle }}</a
+      ><i class="{{ video.verify_icon }}">{{ video.verify_icon_name }}</i>
+      <span> {{ video.subscriber }}</span>
+      <div
+        class="dropdown mr-5"
+        dropdown
+        dropdownToggle
+        (click)="(false)"
+        *ngIf="!userExist"
+      >
+        <button class="btn" type="button">
+          {{ video.subscribe }}
+        </button>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right">
+          <p class="">Want to subscribe to this channel?</p>
+          <p class="">Sign in to subscribe to this channel.</p>
+          <div class="dropdown-divider"></div>
+          <a class="" routerLink="/signup"> SIGN IN</a>
+        </div>
+      </div>
+      <button
+        class="btn"
+        type="button"
+        *ngIf="userExist"
+        (click)="userSubscribe()"
+        [ngClass]="{ red: subscribe, grey: !subscribe }"
+      >
+        {{ Subscribe }}
+      </button>
+    </div>
+    <hr />
+  </div>
+  <div class="col-sm-4">
+    <div class="container" *ngFor="let video of videos">
+      <div class="video_side_thumbnail">
+        <video controls>
+          <source src="{{ video.thumbnail }}" type="video/mp4" />
+        </video>
+      </div>
+      <div class="side_title">
+        <h6>{{ video.side_title }}</h6>
+        <a href="">{{ video.side_subtitle }}</a>
+        <span>{{ video.timestamp }}</span>
+      </div>
+    </div>
+  </div>
+</div>

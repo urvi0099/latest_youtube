@@ -1,0 +1,18 @@
+<!-- ************* sidebar start  ***************** -->
+<div class="container">
+  <div class="categories">
+    <div
+      class="category"
+      [ngClass]="{ 'nav-list-open': sidenavstatus }"
+      *ngFor="let item of list"
+    >
+      <i class="{{ item.icon }}">{{ item.pic }}</i>
+      <span routerLink="{{ item.link }}">
+        {{ item.name }}
+      </span>
+    </div>
+  </div>
+  <hr />
+</div>
+
+<!-- ************ sidebar ends   ******************* -->

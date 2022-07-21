@@ -1,0 +1,33 @@
+<div
+  class="dropdown mr-5"
+  dropdown
+  dropdownToggle
+  (click)="(false)"
+  *ngIf="!userExist"
+>
+  <div class="comment-section">
+    <img src="assets/img/user.png" class="avatar" />
+    <input type="text" placeholder="Add a Comment..." />
+  </div>
+  <div *dropdownMenu class="dropdown-menu dropdown-menu-left">
+    <p class="">Comment this video?</p>
+    <p class="">Sign in to comment this channel.</p>
+    <div class="dropdown-divider"></div>
+    <a class="" routerLink="/signup"> SIGN IN</a>
+  </div>
+  <hr />
+</div>
+<div class="comments" *ngIf="userExist">
+  <div class="comment-section">
+    <ngx-avatar name="{{ userExist }}" class="profile"></ngx-avatar>
+    <input type="text" placeholder="Add a Comment..." [(ngModel)]="comment" />
+  </div>
+  <hr />
+  <div class="button">
+    <button class="btn btn-default" (click)="cancel()">CANCEL</button>
+    <button class="btn1" (click)="save()">COMMENT</button>
+  </div>
+  <div *ngFor="let comments of postComment">
+    <p>{{ comments }}</p>
+  </div>
+</div>

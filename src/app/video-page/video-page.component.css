@@ -55,9 +55,10 @@
   margin-left: 550px;
   margin-top: -18px;
   color: white;
-  background-color: rgb(228, 21, 21);
   border: none;
   box-shadow: none;
+  text-align: center;
+  background-color: red;
 }
 
 .title {
@@ -177,8 +178,10 @@
 }
 .red {
   background-color: red;
+  width: 115px;
 }
 
 .grey {
   background-color: grey;
+  width: 115px;
 }

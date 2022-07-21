@@ -3,6 +3,7 @@ import { videos } from '../shared/models/video';
 import { VideoService } from '../services/video.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClipboardService } from 'ngx-clipboard';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-video-page',
@@ -14,6 +15,10 @@ export class VideoPageComponent implements OnInit {
   userExist = localStorage.getItem('username');
   subscribe = true;
   Subscribe = 'SUBSCRIBE';
+  dislike: boolean = true;
+  like: boolean = true;
+  increaseLike = 0;
+  comment = new FormControl('');
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -43,7 +48,17 @@ export class VideoPageComponent implements OnInit {
     this.subscribe = !this.subscribe;
     this.Subscribe = this.subscribe ? 'SUBSCRIBE' : 'SUBSCRIBED';
   }
-  disLike(){
-    
+  disLike() {
+    this.dislike = !this.dislike;
+  }
+  Like() {
+    this.like = !this.like;
+  }
+
+  increment() {
+    this.increaseLike++;
+  }
+  decrement() {
+    this.increaseLike--;
   }
 }

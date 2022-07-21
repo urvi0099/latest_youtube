@@ -23,6 +23,12 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { SearchService } from './search.service';
 import { VideoPageComponent } from './video-page/video-page.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { CommentComponent } from './comment/comment.component';
+//============  Ngxs  =========
+import { NgxsModule } from '@ngxs/store';
+import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 @NgModule({
   declarations: [
@@ -37,6 +43,7 @@ import { ClipboardModule } from 'ngx-clipboard';
     HeaderLeftComponent,
     HeaderRightComponent,
     VideoPageComponent,
+    CommentComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +57,11 @@ import { ClipboardModule } from 'ngx-clipboard';
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
     ClipboardModule,
+    //============  Ngxs  =========
+    NgxsModule.forRoot(),
+    NgxsStoragePluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot(),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
   ],
   providers: [SearchService],
   bootstrap: [AppComponent],

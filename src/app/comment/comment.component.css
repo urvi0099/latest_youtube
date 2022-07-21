@@ -1,0 +1,57 @@
+.avatar {
+  vertical-align: middle;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+input {
+  border-style: none;
+  margin-left: 20px;
+  margin-top: -15px;
+}
+input:focus {
+  outline: none;
+}
+hr {
+  margin-left: 65px;
+  margin-top: -15px;
+}
+.button {
+  margin-left: 540px;
+}
+.btn-default {
+  font-weight: 500;
+  color: rgb(94, 91, 91);
+  box-shadow: none;
+}
+.btn1 {
+  box-shadow: none;
+  color: grey;
+  background-color: lightgray;
+  border: none;
+  padding: 5px;
+}
+.dropdown-menu {
+  padding: 0px;
+  background-color: whitesmoke;
+  cursor: pointer;
+  width: 300px;
+  border: none;
+}
+
+.dropdown-menu p {
+  margin-top: 24px;
+  margin-left: 20px;
+}
+
+.dropdown-menu a {
+  color: rgb(58, 110, 223);
+  margin-left: 15px;
+}
+/* .comments {
+  overflow-y: scroll;
+} */
+.comment-section {
+  display: flex;
+}

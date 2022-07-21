@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-sm-8">
+  <div class="col-md-8">
     <div class="video_thumbnail">
       <video controls>
         <source src="{{ video.thumbnail }}" type="video/mp4" />
@@ -11,7 +11,6 @@
       </div>
       <div class="subtitle">
         <span>{{ video.timestamp }}</span>
-
         <div
           class="dropdown mr-5"
           dropdown
@@ -31,12 +30,15 @@
             <a class="" routerLink="/signup"> SIGN IN</a>
           </div>
         </div>
-        <div class="liked" *ngIf="userExist">
-          <i class="{{ video.like_icon }}">{{ video.liked_icon_name }}</i
-          >&nbsp;&nbsp;
-          {{ video.like }}
-        </div>
 
+        <div class="liked" *ngIf="userExist" (click)="Like()">
+          <i class="{{ video.like_icon }}" *ngIf="like" (click)="increment()">{{
+            video.liked_icon_name
+          }}</i>
+          <i class="material-icons" *ngIf="!like" (click)="decrement()"
+            >thumb_up</i
+          >&nbsp;&nbsp; {{ increaseLike }}
+        </div>
         <div
           class="dropdown mr-5"
           dropdown
@@ -56,9 +58,11 @@
             <a class="" routerLink="/signup"> SIGN IN</a>
           </div>
         </div>
-
         <div class="dislike" *ngIf="userExist" (click)="disLike()">
-          <i class="{{ video.dislike_icon }}">{{ video.disliked_icon_name }} </i
+          <i class="{{ video.dislike_icon }}" *ngIf="dislike">{{
+            video.disliked_icon_name
+          }}</i>
+          <i class="material-icons" *ngIf="!dislike">thumb_down</i
           >&nbsp;&nbsp;{{ video.dislike }}
         </div>
 
@@ -69,7 +73,6 @@
         <div class="clipboard" *ngIf="urlcopied">
           <span id="custom-tooltip" class="url">Url copied!!</span>
         </div>
-
         <div class="more_icon">
           <i class="{{ video.more_icon }}">{{ video.more_icon_name }} </i>
         </div>
@@ -109,8 +112,9 @@
       </button>
     </div>
     <hr />
+    <app-comment></app-comment>
   </div>
-  <div class="col-sm-4">
+  <div class="col-md-4">
     <div class="container" *ngFor="let video of videos">
       <div class="video_side_thumbnail">
         <video controls>
